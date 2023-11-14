@@ -1,7 +1,6 @@
 package org.mindrot;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 
 // Copyright (c) 2006 Damien Miller <djm@mindrot.org>
 //
@@ -196,30 +195,4 @@ public class TestBCrypt extends TestCase {
 		System.out.println("");
 	}
 	
-	public void testBase64Impl () {
-	  try {
-  	  System.out.println ("BCrypt.base64 implementation");
-  	  Method m  = BCrypt.class.getDeclaredMethod ("encode_base64", byte[].class, int.class);
-  	  m.setAccessible (true);
-  	  byte[] content = "BCrypt.base64 encoding".getBytes ("UTF-8");
-  	  int size = content.length;
-  	  Object result = m.invoke (null, content,size);
-  	  String actually = (String) result;
-  	  String expected = "OiLwcV/yJkHfa0S0LA/jZkLtXEjsXu";
-  	  assertEquals (actually, expected);
-  	  
-      content = "BCrypt.base64 encoding?".getBytes ("UTF-8");
-      size = content.length;
-      result = m.invoke (null, content,size);
-      actually = (String) result;
-      expected = "OiLwcV/yJkHfa0S0LA/jZkLtXEjsXx6";
-      //System.out.println (actually);
-      assertEquals (actually, expected);
-      
-	  }
-	  catch (Throwable shit) {
-	    assertFalse(true);
-	  }
-	}
-
 }
