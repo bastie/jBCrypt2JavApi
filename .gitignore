@@ -1,1 +1,9 @@
 /target/
+
+
+# Eclipse
+.classpath
+.settings
+.project
+
+# EOF
