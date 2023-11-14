@@ -199,24 +199,6 @@ public class TestBCrypt extends TestCase {
 	public void testBase64Impl () {
 	  try {
   	  System.out.println ("BCrypt.base64 implementation");
-/*  	  
-  	  Method[] ms = BCrypt.class.getDeclaredMethods ();
-  	  for (int i = 0; i < ms.length; i++) {
-  	    System.out.println (ms[i].getName ());
-  	     Type[] pt = ms[i].getParameterTypes ();
-  	     if (pt.length > 0) {
-  	       System.out.println ("  (");
-  	     }
-  	     for (int j = 0; j < pt.length; j++) {
-  	       System.out.print ("    "+pt[j].getTypeName ());
-  	       System.out.println (j == pt.length-1 ? "" : ",");
-  	     }
-  	     if (pt.length > 0) {
-           System.out.println ("  )");
-         }
-         
-  	  }
-*/  	  
   	  Method m  = BCrypt.class.getDeclaredMethod ("encode_base64", byte[].class, int.class);
   	  m.setAccessible (true);
   	  byte[] content = "BCrypt.base64 encoding".getBytes ("UTF-8");
